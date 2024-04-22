@@ -1,0 +1,25 @@
+plan: git://git@github.com:lunarway/lw-shuttle-infrastructure-plan.git
+
+vars:
+  service: yente
+  squad: surveyor
+  repo: yente
+  domain: customer-screening
+
+  docker:
+    baseImage: ghcr.io/opensanctions/yente
+    baseTag: 3.8.4
+    destImage: yente
+
+scripts:
+  build:
+    description: Generate kubernetes configuration files
+    args:
+      - name: tag
+    actions:
+      - shell: tag=$($project/scripts/tag.sh) $plan/scripts/build.sh
+
+  push:
+    description: Pushes the docker image to quay.
+    actions:
+      - shell: tag=$($project/scripts/tag.sh) $plan/scripts/push.sh

@@ -96,3 +96,19 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+.settings
+.git
+.idea
+*.iml
+.vscode
+.DS_Store
+reports/*
+vendor
+buildInfo.json
+/.shuttle/
+/.dockerignore
+/main
+/local.env
+env.local
