@@ -7,8 +7,6 @@ vars:
   domain: customer-screening
 
   docker:
-    baseImage: ghcr.io/opensanctions/yente
-    baseTag: 3.8.4
     destImage: yente
 
 scripts:
